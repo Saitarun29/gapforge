@@ -1,0 +1,45 @@
+{
+  "name": "gapforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered competitive feature gap analysis. Compare your product against competitors and get a structured, actionable report.",
+  "keywords": [
+    "competitive-analysis",
+    "feature-gap-analysis",
+    "ai",
+    "product-strategy",
+    "openrouter",
+    "jina-ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.2.12",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
