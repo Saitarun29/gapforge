@@ -112,12 +112,12 @@ npm run lint      # Run ESLint
 
 | View | Description |
 |---|---|
-| ![Hero section with URL input form](/screenshots/hero-form.png) | Hero section with URL input form |
-| ![Executive summary card](/screenshots/executive-summary.png) | Executive summary card |
-| ![Feature comparison matrix](/screenshots/feature-comparison.png) | Feature comparison matrix |
-| ![Missing features with impact badges](/screenshots/missing-features.png) | Missing features with impact badges |
-| ![Prioritized roadmap timeline](/screenshots/roadmap-timeline.png) | Prioritized roadmap timeline |
-| ![Running application](/screenshots/running-app.png) | Running application |
+| ![Hero section with URL input form](public/screenshots/hero-form.png) | Hero section with URL input form |
+| ![Executive summary card](public/screenshots/executive-summary.png) | Executive summary card |
+| ![Feature comparison matrix](public/screenshots/feature-comparison.png) | Feature comparison matrix |
+| ![Missing features with impact badges](public/screenshots/missing-features.png) | Missing features with impact badges |
+| ![Prioritized roadmap timeline](public/screenshots/roadmap-timeline.png) | Prioritized roadmap timeline |
+| ![Running application](public/screenshots/running-app.png) | Running application |
 
 ## Roadmap
 
