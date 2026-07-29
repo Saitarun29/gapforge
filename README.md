@@ -82,11 +82,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## Environment Variables
 
 | Variable | Required | Default | Description |
-|---|---|---|---|
+|---|---|---|---|---|
 | `OPENROUTER_API_KEY` | Yes | — | OpenRouter API key (get one at [openrouter.ai/keys](https://openrouter.ai/keys)) |
 | `OPENROUTER_MODEL` | No | `openrouter/free` | AI model to use (change to switch providers) |
 | `OPENROUTER_BASE_URL` | No | `https://openrouter.ai/api/v1` | OpenRouter base URL |
-| `JINA_API_KEY` | No | — | Jina AI Reader API key (for higher rate limits) |
 
 ## Local Development
 
@@ -107,7 +106,6 @@ npm run lint      # Run ESLint
    - `OPENROUTER_API_KEY`
    - `OPENROUTER_MODEL` (optional)
    - `OPENROUTER_BASE_URL` (optional)
-   - `JINA_API_KEY` (optional)
 4. Deploy
 
 ## Screenshots

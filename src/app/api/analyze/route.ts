@@ -11,20 +11,10 @@ interface FetchedContent {
 
 async function fetchWithJina(url: string): Promise<FetchedContent> {
   try {
-    // URL has already passed SSRF validation before reaching here
     const jinaUrl = `https://r.jina.ai/http://${url}`;
 
-    // Jina AI Reader works without authentication.
-    // Providing a JINA_API_KEY gives higher rate limits.
-    const headers: Record<string, string> = {
-      Accept: "text/markdown",
-    };
-    if (process.env.JINA_API_KEY) {
-      headers.Authorization = `Bearer ${process.env.JINA_API_KEY}`;
-    }
-
     const response = await fetch(jinaUrl, {
-      headers,
+      headers: { Accept: "text/markdown" },
       signal: AbortSignal.timeout(30000),
     });
 
@@ -89,12 +79,9 @@ export async function POST(request: NextRequest) {
       validatedUrls.push(result.normalized);
     }
 
-    // Check required and optional API keys
-    // JINA_API_KEY is optional — Jina AI Reader works without authentication.
-    // Only OPENROUTER_API_KEY is strictly required.
     if (!process.env.OPENROUTER_API_KEY) {
       return NextResponse.json(
-        { error: "OPENROUTER_API_KEY is not configured" },
+        { error: "OPENROUTER_API_KEY is not configured." },
         { status: 500 }
       );
     }
