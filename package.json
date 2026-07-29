@@ -6,20 +6,26 @@
   "keywords": [
     "competitive-analysis",
     "feature-gap-analysis",
+    "gap-analysis",
     "ai",
     "product-strategy",
     "openrouter",
-    "jina-ai"
+    "jina-ai",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "saas",
+    "product-management"
   ],
-  "author": "",
+  "author": "Sai Tarun <https://github.com/Saitarun29>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/gapforge.git"
+    "url": "git+https://github.com/Saitarun29/gapforge.git"
   },
-  "homepage": "https://github.com/your-username/gapforge#readme",
+  "homepage": "https://github.com/Saitarun29/gapforge#readme",
   "bugs": {
-    "url": "https://github.com/your-username/gapforge/issues"
+    "url": "https://github.com/Saitarun29/gapforge/issues"
   },
   "scripts": {
     "dev": "next dev",
