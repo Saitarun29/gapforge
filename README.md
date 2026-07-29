@@ -110,15 +110,14 @@ npm run lint      # Run ESLint
 
 ## Screenshots
 
-_Coming soon._
-
 | View | Description |
 |---|---|
-| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Hero+%26+Form) | Hero section with URL input form |
-| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Executive+Summary) | Executive summary card |
-| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Feature+Matrix) | Feature comparison matrix |
-| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Missing+Features) | Missing features with impact badges |
-| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Roadmap) | Prioritized roadmap timeline |
+| ![Hero section with URL input form](/screenshots/hero-form.png) | Hero section with URL input form |
+| ![Executive summary card](/screenshots/executive-summary.png) | Executive summary card |
+| ![Feature comparison matrix](/screenshots/feature-comparison.png) | Feature comparison matrix |
+| ![Missing features with impact badges](/screenshots/missing-features.png) | Missing features with impact badges |
+| ![Prioritized roadmap timeline](/screenshots/roadmap-timeline.png) | Prioritized roadmap timeline |
+| ![Running application](/screenshots/running-app.png) | Running application |
 
 ## Roadmap
 
