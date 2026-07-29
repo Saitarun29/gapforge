@@ -15,11 +15,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/your-username/gapforge.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/your-username/gapforge#readme",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/your-username/gapforge/issues"
   },
   "scripts": {
     "dev": "next dev",

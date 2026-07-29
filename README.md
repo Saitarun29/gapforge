@@ -12,17 +12,6 @@ AI-powered competitive feature gap analysis. Compare your product against compet
 - **Executive summary** — High-level strategic overview of the competitive landscape
 - **SSRF-safe URL validation** — All submitted URLs are validated against private/internal network addresses before any request is made
 
-## Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Framework | [Next.js](https://nextjs.org/) 16 (App Router) |
-| Language | [TypeScript](https://www.typescriptlang.org/) (strict mode) |
-| Styling | [Tailwind CSS](https://tailwindcss.com/) v4 |
-| AI Provider | [OpenRouter](https://openrouter.ai/) (model-agnostic) |
-| Web Scraper | [Jina AI Reader](https://r.jina.ai) |
-| Fonts | Geist (via `next/font`) |
-
 ## Architecture
 
 ```
@@ -60,19 +49,23 @@ User submits URLs
                      │  Prioritized Roadmap
 ```
 
-## How It Works
+## Tech Stack
 
-1. **Submit URLs** — Enter your product page URL and two competitor URLs
-2. **Scrape content** — Jina AI Reader fetches and converts web pages to markdown
-3. **Analyze** — OpenRouter AI compares the content and extracts features, gaps, and roadmap items
-4. **View results** — A polished dashboard shows executive summary, feature matrix, missing features, and priority roadmap
+| Layer | Technology |
+|---|---|
+| Framework | [Next.js](https://nextjs.org/) 16 (App Router) |
+| Language | [TypeScript](https://www.typescriptlang.org/) (strict mode) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) v4 |
+| AI Provider | [OpenRouter](https://openrouter.ai/) (model-agnostic) |
+| Web Scraper | [Jina AI Reader](https://r.jina.ai) |
+| Fonts | Geist (via `next/font`) |
 
-## Setup
+## Installation
 
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd gap-analyzer
+git clone https://github.com/your-username/gapforge.git
+cd gapforge
 
 # Install dependencies
 npm install
@@ -86,13 +79,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Production build
-
-```bash
-npm run build
-npm start
-```
-
 ## Environment Variables
 
 | Variable | Required | Default | Description |
@@ -102,69 +88,48 @@ npm start
 | `OPENROUTER_BASE_URL` | No | `https://openrouter.ai/api/v1` | OpenRouter base URL |
 | `JINA_API_KEY` | No | — | Jina AI Reader API key (for higher rate limits) |
 
-## Example URLs
+## Local Development
 
-Input URLs for testing:
-
-- **Your Product**: `https://trello.com`
-- **Competitor 1**: `https://asana.com`
-- **Competitor 2**: `https://monday.com`
-
-### Cursor
-
-Create `.cursorrules` (or `.cursor/rules/`) to reference the project. The AI provider in `src/lib/ai.ts` is fully isolated — change `OPENROUTER_MODEL` to switch without code changes.
-
-### Windsurf
-
-The project uses standard Next.js conventions. The `src/` directory structure follows the App Router pattern. No Windsurf-specific configuration needed.
-
-### GitHub Copilot
-
-Standard TypeScript + React project. Copilot works out of the box with `.ts` and `.tsx` files. The `@/` path alias maps to `src/`.
-
-## Known Limitations
-
-- **Scraping quality** — Jina AI Reader converts web pages to markdown; complex SPAs or JavaScript-heavy sites may not render fully
-- **AI accuracy** — The model extracts features from scraped text; feature lists may not be exhaustive
-- **Two-competitor limit** — The form accepts exactly two competitors
-- **No persistence** — Results are not saved; refresh the page to start over
-
-## Future Improvements
-
-- GitHub repository analysis — Analyze codebases instead of marketing pages
-- Changelog analysis — Track feature changes over time from changelogs
-- Continuous monitoring — Scheduled re-scraping with alerting on new features
-- PDF export — Download analysis results as a PDF report
-- Team workspaces — Shared analysis history and collaborative annotations
-
-## Project Structure
-
+```bash
+npm run dev       # Start development server on http://localhost:3000
+npm run build     # Create production build
+npm run start     # Run production build
+npm run lint      # Run ESLint
 ```
-src/
-├── app/
-│   ├── api/analyze/route.ts   # POST /api/analyze — main API endpoint
-│   ├── error.tsx              # Global error boundary (runtime crash fallback)
-│   ├── loading.tsx            # Full-page skeleton loader (initial page load)
-│   ├── globals.css            # Global styles, Tailwind imports, custom animations
-│   ├── layout.tsx             # Root layout (fonts, metadata)
-│   └── page.tsx               # Home page — hero, form, results
-├── components/
-│   ├── AnalyzerForm.tsx       # URL input form with 3 fields
-│   ├── ExecutiveSummary.tsx   # Summary card with paragraph rendering
-│   ├── FeatureComparison.tsx  # Feature matrix table (desktop) + cards (mobile)
-│   ├── MissingFeatures.tsx    # Missing feature cards sorted by impact
-│   └── PrioritizedRoadmap.tsx # Timeline-style roadmap with effort badges
-├── lib/
-│   ├── ai.ts                  # OpenRouter provider (isolated AI layer)
-│   └── urlValidation.ts       # SSRF-safe URL validation helpers
-└── types/
-    └── index.ts               # Shared TypeScript interfaces
-```
+
+## Deployment (Vercel)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+1. Push the repository to GitHub
+2. Import the project in Vercel
+3. Add the following environment variables in the Vercel dashboard:
+   - `OPENROUTER_API_KEY`
+   - `OPENROUTER_MODEL` (optional)
+   - `OPENROUTER_BASE_URL` (optional)
+   - `JINA_API_KEY` (optional)
+4. Deploy
+
+## Screenshots
+
+_Coming soon._
+
+| View | Description |
+|---|---|
+| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Hero+%26+Form) | Hero section with URL input form |
+| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Executive+Summary) | Executive summary card |
+| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Feature+Matrix) | Feature comparison matrix |
+| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Missing+Features) | Missing features with impact badges |
+| ![Screenshot placeholder](https://via.placeholder.com/400x250?text=Roadmap) | Prioritized roadmap timeline |
+
+## Roadmap
+
+- [ ] GitHub repository analysis — Analyze codebases instead of marketing pages
+- [ ] Changelog analysis — Track feature changes over time from changelogs
+- [ ] Continuous monitoring — Scheduled re-scraping with alerting on new features
+- [ ] PDF export — Download analysis results as a PDF report
+- [ ] Team workspaces — Shared analysis history and collaborative annotations
 
 ## License
 
-MIT
-
-## Contributing
-
-Contributions are welcome. Open an issue or submit a pull request.
+MIT — see [LICENSE](LICENSE) for details.

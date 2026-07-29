@@ -32,9 +32,8 @@ function statusToMessage(status: number, fallback: string): string {
  * Strategy:
  * 1. Trim whitespace.
  * 2. Find the first '{' and the last '}' — extract only that substring.
- * 3. Strip markdown code fences if they wrap the extracted block.
- * 4. Remove trailing commas before closing braces/brackets.
- * 5. Parse with JSON.parse().
+ * 3. Remove trailing commas before closing braces/brackets.
+ * 4. Parse with JSON.parse().
  */
 function extractAndParseJSON(raw: string): {
   parsed: AnalysisResult | null;
@@ -42,7 +41,6 @@ function extractAndParseJSON(raw: string): {
 } {
   let cleaned = raw.trim();
 
-  // Step 1 — find the JSON object boundaries
   const firstBrace = cleaned.indexOf("{");
   const lastBrace = cleaned.lastIndexOf("}");
 
@@ -52,10 +50,8 @@ function extractAndParseJSON(raw: string): {
 
   cleaned = cleaned.slice(firstBrace, lastBrace + 1);
 
-  // Step 2 — remove trailing commas before closing braces/brackets
   cleaned = cleaned.replace(/,(\s*[}\]])/g, "$1");
 
-  // Step 4 — attempt parse
   try {
     const parsed = JSON.parse(cleaned);
     return { parsed, extracted: cleaned };
